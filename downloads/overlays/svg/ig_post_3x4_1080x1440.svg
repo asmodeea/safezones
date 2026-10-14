@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440">
+<title>Instagram post / carusel 3:4 1080x1440</title>
+<g id="zona-1-atentie"><rect x="0" y="0" width="40" height="1440" fill="#ff9600" fill-opacity="0.31" stroke="#ff9600" stroke-width="3"/><title>aerisire 40 px (regula practica)</title></g>
+<g id="zona-2-atentie"><rect x="1040" y="0" width="40" height="1440" fill="#ff9600" fill-opacity="0.31" stroke="#ff9600" stroke-width="3"/><title>aerisire 40 px (regula practica)</title></g>
+<rect id="zona-sigura" x="40" y="0" width="1000" height="1440" fill="none" stroke="#1ec85a" stroke-width="4" stroke-dasharray="14 10"/>
+<g id="specificatii">
+<rect x="89" y="502" width="902" height="436" rx="24" fill="#000" fill-opacity="0.67"/>
+<text x="540" y="599" font-size="56" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" fill="#ffd600">IG POST / CARUSEL 3:4</text>
+<text x="540" y="746" font-size="111" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" fill="#ffffff">1080 x 1440</text>
+<text x="540" y="831" font-size="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" fill="#e1e1e1">min 320 px · max 30 MB</text>
+<text x="540" y="891" font-size="40" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" fill="#e1e1e1">carusel: 2-20 slide-uri, același raport</text>
+</g></svg>

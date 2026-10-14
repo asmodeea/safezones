@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<title>Instagram post / carusel 4:5 1080x1350</title>
+<g id="zona-1-atentie"><rect x="0" y="0" width="34" height="1350" fill="#ff9600" fill-opacity="0.31" stroke="#ff9600" stroke-width="3"/><title>taiat in grila de profil 3:4 (~34 px)</title></g>
+<g id="zona-2-atentie"><rect x="1046" y="0" width="34" height="1350" fill="#ff9600" fill-opacity="0.31" stroke="#ff9600" stroke-width="3"/><title>taiat in grila de profil 3:4 (~34 px)</title></g>
+<rect id="zona-sigura" x="34" y="0" width="1012" height="1350" fill="none" stroke="#1ec85a" stroke-width="4" stroke-dasharray="14 10"/>
+<g id="specificatii">
+<rect x="78" y="453" width="924" height="444" rx="24" fill="#000" fill-opacity="0.67"/>
+<text x="540" y="552" font-size="56" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" fill="#ffd600">IG POST / CARUSEL 4:5</text>
+<text x="540" y="702" font-size="113" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" fill="#ffffff">1080 x 1350</text>
+<text x="540" y="788" font-size="41" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" fill="#e1e1e1">min 320 px · max 30 MB</text>
+<text x="540" y="849" font-size="41" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" fill="#e1e1e1">carusel: 2-20 slide-uri, același raport</text>
+</g></svg>

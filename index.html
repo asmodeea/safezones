@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="ro" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safe zones social media + Google Ads · ghid</title>
+<meta name="description" content="Dimensiuni și zone de siguranță pentru Meta, TikTok și Google Ads, cu previzualizare pe poză.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+/* ===== Culori: schimbă-le aici ===== */
+:root{
+  --bg:#2f2340; --bg-alt:#191322; --card:#392b4d;
+  --text:#f1ecf8; --muted:#b9aed0; --line:rgba(255,255,255,.13);
+  --accent:#38d9c0; --accent2:#b58cff;
+  --red:#e61e1e; --orange:#ff9600; --green:#1ec85a;
+  --radius:14px;
+  --font-title:"Archivo Black", system-ui, sans-serif;
+  --font-body:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+:root[data-theme="light"]{
+  --bg:#f7f4fb; --bg-alt:#ffffff; --card:#ffffff;
+  --text:#241a35; --muted:#615775; --line:rgba(36,26,53,.15);
+  --accent:#0f9b8a; --accent2:#6a3fd0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--font-body)}
+h1,h2,h3{font-family:var(--font-title);font-weight:400;line-height:1.1;margin:0}
+h1{font-size:clamp(2rem,5vw,3.6rem)}
+h2{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:.6em}
+h3{font-size:1.05rem;margin:1.4em 0 .5em}
+a{color:var(--accent)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+.muted{color:var(--muted)}
+code{font:.88em ui-monospace,Menlo,Consolas,monospace;background:var(--bg-alt);padding:.1em .4em;border-radius:5px}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg-alt) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:6px;overflow-x:auto;height:54px;white-space:nowrap}
+.nav a{color:var(--muted);text-decoration:none;font-size:.9rem;padding:6px 10px;border-radius:8px}
+.nav a:hover{color:var(--text);background:var(--line)}
+.nav .sp{flex:1}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .92rem var(--font-body);padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;text-decoration:none}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#0d1b1a}
+.btn.sm{padding:6px 12px;font-size:.82rem}
+
+/* hero */
+.hero{padding:64px 0 40px}
+.hero p{max-width:62ch;font-size:1.1rem;color:var(--muted);margin:18px 0 26px}
+.hero .actions{display:flex;flex-wrap:wrap;gap:10px}
+
+/* preview */
+.preview{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}
+.stage{background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;justify-content:center;align-items:center;min-height:360px}
+.frame{position:relative;overflow:hidden;border-radius:6px;box-shadow:0 12px 40px rgba(0,0,0,.35);background:#222}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--px,58%) 50%;display:block}
+.frame svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.frame svg text{font-family:Verdana,"DejaVu Sans",Arial,sans-serif;font-weight:700}
+.side{display:flex;flex-direction:column;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.card h3{margin:0 0 10px;font-size:.95rem}
+.group{margin-bottom:12px}
+.group:last-child{margin-bottom:0}
+.group b{display:block;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:600 .82rem var(--font-body);padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#0d1b1a}
+.toggles{display:flex;flex-direction:column;gap:8px}
+.toggles label{display:flex;align-items:center;gap:10px;font-size:.92rem;cursor:pointer}
+.toggles input[type=range]{width:100%;accent-color:var(--accent)}
+.toggles label.stack{flex-direction:column;align-items:stretch;gap:4px}
+.legend{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.85rem}
+.legend li{display:flex;gap:8px;align-items:flex-start}
+.sw{flex:none;width:14px;height:14px;border-radius:3px;margin-top:3px;border:2px solid}
+.sw.hard{background:rgba(230,30,30,.45);border-color:var(--red)}
+.sw.caution{background:rgba(255,150,0,.35);border-color:var(--orange)}
+.sw.safe{background:transparent;border:2px dashed var(--green)}
+.dl{display:flex;flex-wrap:wrap;gap:6px}
+#fmtTitle{font-size:1.1rem;margin:0 0 4px}
+#fmtMeta{font-size:.88rem;color:var(--muted);margin:0 0 10px}
+
+/* tabele */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--bg-alt)}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td .ovl{font:600 .82rem ui-monospace,Menlo,Consolas,monospace;background:none;border:0;padding:0;color:var(--accent);cursor:pointer;text-align:left;text-decoration:underline;text-underline-offset:3px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.note{border-left:3px solid var(--accent2);padding:2px 0 2px 14px;color:var(--muted);margin:18px 0}
+ul.clean{padding-left:1.1em;margin:.4em 0 1em}
+ul.clean li{margin:.3em 0}
+footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+
+/* animații discrete */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+}
+@media (max-width:900px){
+  .preview{grid-template-columns:1fr}
+  .stage{min-height:240px;padding:10px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#previzualizare">Previzualizare</a>
+    <a href="#dimensiuni">Dimensiuni</a>
+    <a href="#meta">Meta</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#facebook">Facebook</a>
+    <a href="#tiktok">TikTok</a>
+    <a href="#google">Google Ads</a>
+    <a href="#surse">Surse</a>
+    <span class="sp"></span>
+    <button class="btn sm" id="themeBtn" type="button" aria-label="Schimbă tema">Temă</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap reveal">
+    <h1>Safe zones și dimensiuni<br>pentru social media și Google Ads</h1>
+    <p>Ce acoperă interfața peste designul tău, ce dimensiuni cer platformele și cât de sigure sunt cifrele. Alege un format și vezi zonele aplicate pe o poză, sau încarcă poza ta.</p>
+    <div class="actions">
+      <a class="btn primary" href="downloads/safezones.zip" download>Descarcă overlay-urile (PNG + SVG)</a>
+      <a class="btn" href="downloads/Ghid-safe-zones-social-media-Google-Ads.pdf" download>Ghid PDF</a>
+    </div>
+  </div>
+</section>
+
+<section id="previzualizare">
+  <div class="wrap">
+    <h2 class="reveal">Previzualizare pe poză</h2>
+    <div class="preview reveal">
+      <div class="stage" id="stage">
+        <div class="frame" id="frame">
+          <img id="photo" src="assets/preview.jpg" alt="Fotografie de previzualizare: hortensie mov cu frunze verzi">
+          <svg id="ov" role="img" aria-label="Zone de siguranță aplicate peste poză" preserveAspectRatio="none"></svg>
+        </div>
+      </div>
+      <aside class="side">
+        <div class="card">
+          <h3 id="fmtTitle"></h3>
+          <p id="fmtMeta"></p>
+          <ul class="legend" id="legend"></ul>
+        </div>
+        <div class="card">
+          <h3>Format</h3>
+          <div id="picker"></div>
+        </div>
+        <div class="card">
+          <h3>Afișare</h3>
+          <div class="toggles">
+            <label><input type="checkbox" id="tOv" checked> Overlay</label>
+            <label><input type="checkbox" id="tFill" checked> Umplere zone</label>
+            <label><input type="checkbox" id="tPanel" checked> Panou cu specificații</label>
+            <label class="stack">Poziția pozei
+              <input type="range" id="px" min="0" max="100" value="58" aria-label="Poziția orizontală a pozei">
+            </label>
+            <div><button class="btn sm" type="button" id="upBtn">Încarcă poza ta</button>
+              <input type="file" id="upFile" accept="image/*" hidden>
+              <span class="muted" style="font-size:.8rem"> rămâne în browserul tău</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Descarcă acest overlay</h3>
+          <div class="dl" id="dl"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="dimensiuni">
+  <div class="wrap">
+    <h2 class="reveal">Toate dimensiunile pe scurt</h2>
+    <p class="muted reveal">Dimensiunile sunt în pixeli. Click pe numele unui overlay ca să-l vezi în previzualizare.</p>
+    <div class="filters reveal" id="tfilters"></div>
+    <div class="tablewrap reveal">
+      <table id="mainTable">
+        <thead><tr><th>Platformă</th><th>Format</th><th>Raport</th><th>Recomandat</th><th>Minim</th><th>Max fișier</th><th>Overlay</th></tr></thead>
+        <tbody>
+          <tr data-p="Meta"><td>Meta</td><td>Story + Reels IG/FB</td><td>9:16</td><td>1080x1920</td><td>600 pe latura scurtă (Reels)</td><td>30 MB imagine</td><td><button class="ovl" data-fmt="meta_story_reels_9x16">meta_story_reels_9x16</button></td></tr>
+          <tr data-p="Instagram"><td>Instagram</td><td>Post / carusel</td><td>4:5</td><td>1080x1350</td><td>320 pe latura scurtă</td><td>30 MB</td><td><button class="ovl" data-fmt="ig_post_4x5">ig_post_4x5</button></td></tr>
+          <tr data-p="Instagram"><td>Instagram</td><td>Post / carusel</td><td>1:1</td><td>1080x1080</td><td>320 pe latura scurtă</td><td>30 MB</td><td><button class="ovl" data-fmt="ig_post_1x1">ig_post_1x1</button></td></tr>
+          <tr data-p="Instagram"><td>Instagram</td><td>Post / carusel</td><td>3:4</td><td>1080x1440</td><td>320 pe latura scurtă</td><td>30 MB</td><td><button class="ovl" data-fmt="ig_post_3x4">ig_post_3x4</button></td></tr>
+          <tr data-p="Facebook"><td>Facebook</td><td>Feed / reclamă</td><td>4:5</td><td>1080x1350</td><td>600x600</td><td>30 MB</td><td><button class="ovl" data-fmt="fb_feed_4x5">fb_feed_4x5</button></td></tr>
+          <tr data-p="Facebook"><td>Facebook</td><td>Feed / reclamă</td><td>1:1</td><td>1080x1080</td><td>600x600</td><td>30 MB</td><td><button class="ovl" data-fmt="fb_feed_1x1">fb_feed_1x1</button></td></tr>
+          <tr data-p="Facebook"><td>Facebook</td><td>Link / landscape</td><td>1.91:1</td><td>1200x628</td><td>600x314</td><td>30 MB</td><td><button class="ovl" data-fmt="fb_link_1x91">fb_link_1x91</button></td></tr>
+          <tr data-p="Facebook"><td>Facebook</td><td>Card de carusel</td><td>1:1 (4:5 acceptat)</td><td>1080x1080</td><td>nespecificat</td><td>30 MB</td><td><button class="ovl" data-fmt="fb_feed_1x1">fb_feed_1x1</button></td></tr>
+          <tr data-p="Facebook"><td>Facebook</td><td>Marketplace, coloana din dreapta, copertă colecție</td><td>1:1</td><td>1080x1080</td><td>nespecificat</td><td>30 MB</td><td><button class="ovl" data-fmt="fb_feed_1x1">fb_feed_1x1</button></td></tr>
+          <tr data-p="TikTok"><td>TikTok</td><td>Imagine / video</td><td>9:16</td><td>1080x1920</td><td>720x1280</td><td>100 MB (imagine)</td><td><button class="ovl" data-fmt="tiktok_9x16">tiktok_9x16</button></td></tr>
+          <tr data-p="TikTok"><td>TikTok</td><td>Imagine / video</td><td>1:1</td><td>1080x1080</td><td>640x640</td><td>100 MB (imagine)</td><td><button class="ovl" data-fmt="tiktok_1x1">tiktok_1x1</button></td></tr>
+          <tr data-p="TikTok"><td>TikTok</td><td>Imagine / video</td><td>16:9</td><td>1920x1080</td><td>1280x720</td><td>100 MB (imagine)</td><td><button class="ovl" data-fmt="tiktok_16x9">tiktok_16x9</button></td></tr>
+          <tr data-p="TikTok"><td>TikTok</td><td>Carusel</td><td>1.91:1 / 1:1 / 9:16</td><td>1200x628 / 640x640 / 720x1280</td><td>nespecificat</td><td>100 KB sugerat</td><td class="muted">cel cu același raport</td></tr>
+          <tr data-p="Google Ads"><td>Google Ads</td><td>Responsive Display, PMax, Demand Gen</td><td>1.91:1</td><td>1200x628</td><td>600x314</td><td>5 MB</td><td><button class="ovl" data-fmt="google_ads_1x91">google_ads_1x91</button></td></tr>
+          <tr data-p="Google Ads"><td>Google Ads</td><td>Responsive Display, PMax, Demand Gen</td><td>1:1</td><td>1200x1200</td><td>300x300</td><td>5 MB</td><td><button class="ovl" data-fmt="google_ads_1x1">google_ads_1x1</button></td></tr>
+          <tr data-p="Google Ads"><td>Google Ads</td><td>PMax, Demand Gen</td><td>4:5</td><td>960x1200</td><td>480x600</td><td>5 MB</td><td><button class="ovl" data-fmt="google_ads_4x5">google_ads_4x5</button></td></tr>
+          <tr data-p="Google Ads"><td>Google Ads</td><td>Demand Gen</td><td>9:16</td><td>1080x1920</td><td>600x1067</td><td>5 MB</td><td><button class="ovl" data-fmt="google_ads_9x16">google_ads_9x16</button></td></tr>
+          <tr data-p="Google Ads"><td>Google Ads</td><td>Responsive Display</td><td>9:16</td><td>900x1600</td><td>600x1067</td><td>5 MB</td><td><button class="ovl" data-fmt="google_ads_9x16">google_ads_9x16</button></td></tr>
+          <tr data-p="Google Ads"><td>Google Ads</td><td>Display încărcat (Demand Gen)</td><td>300x250, 336x280, 728x90, 970x90, 160x600, 300x600, 320x50</td><td>dimensiunea exactă</td><td>dimensiunea exactă</td><td>150 KB</td><td class="muted">fără overlay</td></tr>
+          <tr data-p="Universal"><td>Universal</td><td>Story + Reels + TikTok</td><td>9:16</td><td>1080x1920</td><td>720x1280</td><td>30 MB</td><td><button class="ovl" data-fmt="universal_9x16">universal_9x16</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note reveal"><b>Universal</b> e un singur overlay 9:16 care ia, pentru fiecare margine, cea mai strictă valoare dintre Meta și TikTok: 269 px sus, 672 px jos, 65 px stânga și 120 px dreapta. Rămâne o zonă sigură de 895x979 px, care merge pe Story, Reels și TikTok. Dacă designul merge pe o singură platformă, folosește overlay-ul ei.</p>
+  </div>
+</section>
+
+<section id="meta">
+  <div class="wrap">
+    <h2 class="reveal">Story și Reels 9:16 (Instagram și Facebook)</h2>
+    <p class="reveal">Din martie 2026 Meta ar folosi o singură zonă sigură 9:16 pentru Story și Reels, de 950x979 px în centrul unui cadru 1080x1920, conform ghidurilor <a href="https://adsuploader.com/blog/meta-ads-size">Ads Uploader</a> și <a href="https://superscale.ai/learn/meta-ad-sizes">Superscale</a>. Documentația Meta nu s-a putut deschide, deci cifrele sunt din ghiduri terțe.</p>
+    <div class="tablewrap reveal"><table>
+      <thead><tr><th>Zonă</th><th>Procent</th><th>Px la 1080x1920</th><th>Ce acoperă</th></tr></thead>
+      <tbody>
+        <tr><td>Sus</td><td>14%</td><td>269</td><td>profil, nume, bara de progres</td></tr>
+        <tr><td>Laterale</td><td>6%</td><td>65 pe fiecare parte</td><td>margine</td></tr>
+        <tr><td>Jos, Story</td><td>20%</td><td>384</td><td>răspuns, CTA, caption</td></tr>
+        <tr><td>Jos, Reels și reclame</td><td>35%</td><td>672</td><td>caption, audio, butoane</td></tr>
+      </tbody></table></div>
+    <p class="reveal">Dacă designul merge și în Story, și în Reels, ține tot ce contează deasupra a 672 px de jos. Overlay-ul <code>meta_story_reels_9x16</code> marchează cu roșu ce e acoperit mereu și cu portocaliu banda 384-672 px de jos, acoperită doar în Reels și reclame.</p>
+    <p class="reveal">Butoanele Reels din dreapta pot depăși 65 px; ghidurile terțe vorbesc de 84-120 px. Overlay-ul universal folosește 120 px.</p>
+    <p class="reveal">Specificații: 1080x1920, minim 600 px pe latura scurtă pentru imaginile din Reels, maxim 30 MB pentru imagine. Sursele nu sunt de acord la Story jos: unele dau 20%, altele 35%.</p>
+  </div>
+</section>
+
+<section id="instagram">
+  <div class="wrap">
+    <h2 class="reveal">Instagram: post și carusel</h2>
+    <p class="reveal">Postarea și caruselul folosesc aceleași trei formate: 4:5 (1080x1350), 1:1 (1080x1080) și 3:4 (1080x1440). Pe feed imaginea se vede întreagă; singura tăiere vine din grila de profil, care afișează 3:4.</p>
+    <div class="tablewrap reveal"><table>
+      <thead><tr><th>Raport</th><th>Dimensiune</th><th>Tăiat în grila de profil</th><th>Overlay</th></tr></thead>
+      <tbody>
+        <tr><td>4:5</td><td>1080x1350</td><td>~34 px pe fiecare latură</td><td><button class="ovl" data-fmt="ig_post_4x5">ig_post_4x5</button></td></tr>
+        <tr><td>1:1</td><td>1080x1080</td><td>135 px pe fiecare latură</td><td><button class="ovl" data-fmt="ig_post_1x1">ig_post_1x1</button></td></tr>
+        <tr><td>3:4</td><td>1080x1440</td><td>nimic; aerisire de 40 px (regulă practică, nu Meta)</td><td><button class="ovl" data-fmt="ig_post_3x4">ig_post_3x4</button></td></tr>
+      </tbody></table></div>
+    <p class="muted reveal">Tăierile sunt calculate din raportul 3:4, nu citate din documentație.</p>
+    <h3 class="reveal">Reguli pentru carusel</h3>
+    <p class="reveal">Din <a href="https://contentdrips.com/blog/2026/05/instagram-carousel-size-format/">ghidul Contentdrips</a>:</p>
+    <ul class="clean reveal">
+      <li>Primul slide stabilește raportul pentru toate slide-urile, deci toate au aceleași dimensiuni.</li>
+      <li>Fiecare slide: JPG sau PNG, maxim 30 MB, minim 320 px; slide video: MP4 sau MOV, maxim 4 GB, până la 60 s.</li>
+      <li>Număr de slide-uri: 2 până la 20. Ghidul Contentdrips spune încă 10, dar rezultatele căutării despre anunțul Instagram din 2024 vorbesc de 20. Verifică în aplicație.</li>
+      <li>Grila de profil arată doar primul slide, deci designul primului slide trebuie să rămână bun și tăiat 3:4.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="facebook">
+  <div class="wrap">
+    <h2 class="reveal">Facebook: feed, reclame, link și carusel</h2>
+    <p class="reveal">Pe feed interfața stă sub imagine, dar în reclame Facebook pune avatarele prietenilor care au dat like paginii peste colțul din stânga-jos. Zona e măsurată pe un screenshot de reclamă 1:1 pe telefon: aproximativ 460x225 px la 1080 lățime, mai ales în colț. Apare uneori, așa că e marcată ca zonă de atenție.</p>
+    <div class="tablewrap reveal"><table>
+      <thead><tr><th>Plasament</th><th>Raport</th><th>Dimensiune</th><th>Minim</th><th>Max fișier</th></tr></thead>
+      <tbody>
+        <tr><td>Feed</td><td>4:5</td><td>1080x1350</td><td>600x600</td><td>30 MB</td></tr>
+        <tr><td>Feed</td><td>1:1</td><td>1080x1080</td><td>600x600</td><td>30 MB</td></tr>
+        <tr><td>Link / landscape</td><td>1.91:1</td><td>1200x628</td><td>600x314</td><td>30 MB</td></tr>
+        <tr><td>Card de carusel</td><td>1:1 (4:5 acceptat)</td><td>1080x1080</td><td>nespecificat</td><td>30 MB</td></tr>
+        <tr><td>Marketplace</td><td>1:1</td><td>1080x1080</td><td>nespecificat</td><td>30 MB</td></tr>
+        <tr><td>Coloana din dreapta (desktop)</td><td>1:1, doar imagine</td><td>1080x1080</td><td>nespecificat</td><td>30 MB</td></tr>
+        <tr><td>Copertă colecție</td><td>1:1 sau 4:5</td><td>1080x1080 sau 1080x1350</td><td>nespecificat</td><td>30 MB</td></tr>
+      </tbody></table></div>
+    <p class="reveal">Cifrele vin din ghidurile <a href="https://adsuploader.com/blog/meta-ads-size">Ads Uploader</a> și <a href="https://superscale.ai/learn/meta-ad-sizes">Superscale</a>, nu din documentația Meta. Toate cardurile unui carusel au același raport.</p>
+    <p class="note reveal">La 4:5 am presupus aceeași mărime pentru zona de avatare, pentru că avatarele se scalează cu lățimea, dar nu am verificat. La 1.91:1 e doar estimată prin scalare din 1:1 și nu am verificat-o. Nu am găsit nicio sursă despre avatarele din colț; dacă vezi altă mărime pe alte reclame, corectează overlay-ul.</p>
+  </div>
+</section>
+
+<section id="tiktok">
+  <div class="wrap">
+    <h2 class="reveal">TikTok</h2>
+    <p class="reveal">Paginile oficiale TikTok date mai jos publică doar dimensiuni minime, fără zone de siguranță. Marginile 9:16 vin din ghiduri terțe.</p>
+    <div class="tablewrap reveal"><table>
+      <thead><tr><th>Format</th><th>Raport</th><th>Minim</th><th>Notă</th></tr></thead>
+      <tbody>
+        <tr><td>Imagine / video vertical (recomandat)</td><td>9:16</td><td>720x1280</td><td>JPG, JPEG sau PNG, maxim 100 MB</td></tr>
+        <tr><td>Imagine / video pătrat</td><td>1:1</td><td>640x640</td><td>la fel</td></tr>
+        <tr><td>Imagine / video orizontal</td><td>16:9</td><td>1280x720</td><td>la fel</td></tr>
+        <tr><td>Carusel standard</td><td>1.91:1, 1:1, 9:16</td><td>nespecificat</td><td>2 până la 35 de imagini; 1200x628, 640x640 și 720x1280; maxim 100 KB sugerat</td></tr>
+      </tbody></table></div>
+    <p class="reveal">Cifrele din primele trei rânduri sunt de pe pagina <a href="https://ads.tiktok.com/help/article/global-app-bundle-image-ad-specifications?lang=en">Global App Bundle image ad specifications</a>, unde dimensiunile stau sub titlul „Video Resolution”, deci merită confirmate în Ads Manager. Caruselul e din <a href="https://ads.tiktok.com/help/article/specifications-for-carousel-ads">Specifications for Carousel Ads</a>.</p>
+    <p class="reveal">Margini 9:16 din ghiduri terțe: 108 px sus, 320 px jos, 60 px stânga, 120 px dreapta, deci zonă sigură de 900x1492 px. Nu am găsit aceste cifre într-o pagină oficială TikTok. La 1:1 și 16:9 nu există interfață publicată peste imagine, iar overlay-urile au doar aerisire de 40 px.</p>
+  </div>
+</section>
+
+<section id="google">
+  <div class="wrap">
+    <h2 class="reveal">Google Ads: Responsive Display, Performance Max, Demand Gen</h2>
+    <p class="reveal">Toate trei tipurile de campanii acceptă 1.91:1 și 1:1; 4:5 apare în Performance Max și Demand Gen, iar 9:16 în Demand Gen și Responsive Display. Fișiere JPG sau PNG, maxim 5 MB. Logo-urile nu sunt în pachet.</p>
+    <div class="tablewrap reveal"><table>
+      <thead><tr><th>Raport</th><th>Recomandat</th><th>Minim</th><th>Responsive Display</th><th>Performance Max</th><th>Demand Gen</th></tr></thead>
+      <tbody>
+        <tr><td>1.91:1</td><td>1200x628</td><td>600x314</td><td>da</td><td>da, obligatoriu</td><td>da</td></tr>
+        <tr><td>1:1</td><td>1200x1200</td><td>300x300</td><td>da</td><td>da, obligatoriu</td><td>da</td></tr>
+        <tr><td>4:5</td><td>960x1200</td><td>480x600</td><td>nu în tabelul oficial actual</td><td>da, opțional</td><td>da</td></tr>
+        <tr><td>9:16</td><td>900x1600 (Responsive Display), 1080x1920 (Demand Gen)</td><td>600x1067</td><td>da</td><td>nu e listat</td><td>da</td></tr>
+      </tbody></table></div>
+    <div class="cols">
+      <div class="reveal">
+        <h3>Număr de imagini și carusele</h3>
+        <ul class="clean">
+          <li>Responsive Display: maxim 15 imagini de marketing în total, toate raporturile la un loc.</li>
+          <li>Performance Max: cel puțin 4 imagini 1.91:1 și 4 imagini 1:1, până la 20 din fiecare; 4:5 opțional, cel puțin 2.</li>
+          <li>Demand Gen, imagine unică: până la 20 de imagini, recomandat 3 din fiecare orientare.</li>
+          <li>Demand Gen, carusel: 2 până la 10 carduri, toate cu același raport; faci un carusel separat pentru fiecare raport.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <h3>Zone de siguranță și text</h3>
+        <ul class="clean">
+          <li>Performance Max: ține conținutul important în centrul de 80% al imaginii, deci 10% liber pe fiecare parte. Overlay-urile Google folosesc această regulă.</li>
+          <li>Demand Gen 9:16: Google spune că zonele sunt similare cu cele de la video 9:16 și oferă șabloane PNG transparente, dar nu publică cifre în text. Descarcă șabloanele de pe <a href="https://support.google.com/google-ads/answer/13547298?hl=en">pagina oficială de specificații video</a> ca să verifici.</li>
+          <li>Responsive Display: Google poate decupa imaginile și cere să nu pui text, logo sau butoane peste ele. Un ghid din 2019, <a href="https://www.jumpfly.com/blog/responsive-display-ad-specs-for-google-ads/">JumpFly</a>, vorbea de până la 5% decupat pe fiecare latură; e vechi.</li>
+          <li>Performance Max: overlay-urile sunt permise, dar pune cel puțin o imagine fără overlay pentru fiecare raport.</li>
+          <li>Demand Gen, display încărcat: 300x250, 336x280, 728x90, 970x90, 160x600, 300x600, 320x50; JPG, PNG sau GIF static, maxim 150 KB.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="reveal">Sursele oficiale: <a href="https://support.google.com/google-ads/answer/9848687">Responsive Display</a>, <a href="https://support.google.com/google-ads/answer/14530211">Performance Max</a> și <a href="https://support.google.com/google-ads/answer/13704860">Demand Gen</a>.</p>
+  </div>
+</section>
+
+<section id="surse">
+  <div class="wrap">
+    <h2 class="reveal">Surse și ce nu am putut verifica</h2>
+    <p class="reveal">Cifrele de la Google și TikTok vin din pagini oficiale deschise pe 14 octombrie 2026. Cele de la Meta vin din ghiduri terțe, pentru că paginile Meta nu s-au putut deschide.</p>
+    <ul class="clean reveal">
+      <li>Meta, margini 9:16: Story jos e 20% în unele surse și 35% în altele; overlay-ul le arată pe amândouă.</li>
+      <li>TikTok, margini 108/320/60/120: ghid terț, fără pagină oficială găsită.</li>
+      <li>Facebook, avatare: măsurate pe un screenshot; la 1.91:1 sunt doar estimate.</li>
+      <li>Instagram, 20 de slide-uri în carusel: din rezultate de căutare despre anunțul din 2024, neconfirmate într-o pagină Meta.</li>
+      <li>Google, Responsive Display 4:5: nu apare în tabelul oficial actual, doar în Performance Max și Demand Gen.</li>
+    </ul>
+    <h3 class="reveal">Surse deschise</h3>
+    <ul class="clean reveal">
+      <li><a href="https://support.google.com/google-ads/answer/9848687">Google, Responsive Display</a></li>
+      <li><a href="https://support.google.com/google-ads/answer/13704860">Google, Demand Gen</a></li>
+      <li><a href="https://support.google.com/google-ads/answer/17140672">Google, Demand Gen, imagini</a></li>
+      <li><a href="https://support.google.com/google-ads/answer/14530211">Google, Performance Max</a></li>
+      <li><a href="https://support.google.com/google-ads/answer/13547298">Google, specificații video</a></li>
+      <li><a href="https://www.jumpfly.com/blog/responsive-display-ad-specs-for-google-ads/">JumpFly, Responsive Display</a></li>
+      <li><a href="https://ads.tiktok.com/help/article/specifications-for-carousel-ads">TikTok, carusel</a></li>
+      <li><a href="https://ads.tiktok.com/help/article/global-app-bundle-image-ad-specifications?lang=en">TikTok, imagine</a></li>
+      <li><a href="https://adsuploader.com/blog/meta-ads-size">Ads Uploader, Meta</a></li>
+      <li><a href="https://superscale.ai/learn/meta-ad-sizes">Superscale, Meta</a></li>
+      <li><a href="https://contentdrips.com/blog/2026/05/instagram-carousel-size-format/">Contentdrips, carusel Instagram</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Actualizat la 14 octombrie 2026. Cifrele se schimbă; verifică în platformă înainte de publicare.</div>
+</footer>
+
+<script>
+const D = {"formats": [{"key": "meta_story_reels_9x16", "title": "Story + Reels Instagram / Facebook 9:16", "short": "Story + Reels 9:16", "w": 1080, "h": 1920, "zones": [{"name": "sus 14% (269 px): profil, nume, bara de progres", "kind": "hard", "rect": [0, 0, 1080, 269]}, {"name": "jos 20% (384 px): acoperit mereu (caption, CTA, răspuns)", "kind": "hard", "rect": [0, 1536, 1080, 1920]}, {"name": "până la 35% (672 px): acoperit în Reels și reclame", "kind": "caution", "rect": [0, 1248, 1080, 1536]}, {"name": "margine 6% (65 px)", "kind": "caution", "rect": [0, 269, 65, 1248]}, {"name": "margine 6% (65 px)", "kind": "caution", "rect": [1015, 269, 1080, 1248]}], "safe": [65, 269, 1015, 1248], "panel": {"rect": [107, 581, 973, 936], "texts": [["STORY + REELS IG / FB", 540.0, 672.9, 52.5, "t"], ["1080 x 1920", 540.0, 812.0, 105.0, "b"], ["min 600 px latura scurtă · max 30 MB", 540.0, 892.2, 37.8, "s"]]}}, {"key": "tiktok_9x16", "title": "TikTok 9:16", "short": "9:16", "w": 1080, "h": 1920, "zones": [{"name": "sus 108 px: Following / For You, căutare", "kind": "hard", "rect": [0, 0, 1080, 108]}, {"name": "jos 320 px: caption, hashtag-uri, sunet", "kind": "hard", "rect": [0, 1600, 1080, 1920]}, {"name": "stânga 60 px", "kind": "caution", "rect": [0, 108, 60, 1600]}, {"name": "dreapta 120 px: like, comment, share, profil", "kind": "caution", "rect": [960, 108, 1080, 1600]}], "safe": [60, 108, 960, 1600], "panel": {"rect": [98, 673, 922, 1035], "texts": [["TIKTOK 9:16", 510.0, 766.6, 53.5, "t"], ["1080 x 1920", 510.0, 908.4, 107.0, "b"], ["min 720x1280 (oficial TikTok)", 510.0, 990.1, 38.5, "s"]]}}, {"key": "universal_9x16", "title": "Universal 9:16 (Meta + TikTok)", "short": "Universal 9:16", "w": 1080, "h": 1920, "zones": [{"name": "sus 269 px (cel mai larg dintre platforme)", "kind": "hard", "rect": [0, 0, 1080, 269]}, {"name": "jos 672 px (Meta unificat, cel mai larg)", "kind": "hard", "rect": [0, 1248, 1080, 1920]}, {"name": "stânga 65 px", "kind": "caution", "rect": [0, 269, 65, 1248]}, {"name": "dreapta 120 px (butoane Reels / TikTok)", "kind": "caution", "rect": [960, 269, 1080, 1248]}], "safe": [65, 269, 960, 1248], "panel": {"rect": [104, 579, 921, 938], "texts": [["UNIVERSAL 9:16", 512.5, 671.8, 53.0, "t"], ["1080 x 1920", 512.5, 812.2, 106.0, "b"], ["Meta + TikTok", 512.5, 893.2, 38.2, "s"]]}}, {"key": "ig_post_4x5", "title": "Instagram post / carusel 4:5", "short": "4:5", "w": 1080, "h": 1350, "zones": [{"name": "tăiat în grila de profil 3:4 (~34 px)", "kind": "caution", "rect": [0, 0, 34, 1350]}, {"name": "tăiat în grila de profil 3:4 (~34 px)", "kind": "caution", "rect": [1046, 0, 1080, 1350]}], "safe": [34, 0, 1046, 1350], "panel": {"rect": [78, 453, 1002, 897], "texts": [["IG POST / CARUSEL 4:5", 540.0, 551.9, 56.5, "t"], ["1080 x 1350", 540.0, 701.6, 113.0, "b"], ["min 320 px · max 30 MB", 540.0, 787.9, 40.7, "s"], ["carusel: 2-20 slide-uri, același raport", 540.0, 849.0, 40.7, "s"]]}}, {"key": "ig_post_1x1", "title": "Instagram post / carusel 1:1", "short": "1:1", "w": 1080, "h": 1080, "zones": [{"name": "tăiat în grila de profil 3:4 (135 px)", "kind": "caution", "rect": [0, 0, 135, 1080]}, {"name": "tăiat în grila de profil 3:4 (135 px)", "kind": "caution", "rect": [945, 0, 1080, 1080]}], "safe": [135, 0, 945, 1080], "panel": {"rect": [170, 361, 910, 719], "texts": [["IG POST / CARUSEL 1:1", 540.0, 440.6, 45.5, "t"], ["1080 x 1080", 540.0, 561.2, 91.0, "b"], ["min 320 px · max 30 MB", 540.0, 630.7, 32.8, "s"], ["carusel: 2-20 slide-uri, același raport", 540.0, 679.9, 32.8, "s"]]}}, {"key": "ig_post_3x4", "title": "Instagram post / carusel 3:4", "short": "3:4", "w": 1080, "h": 1440, "zones": [{"name": "aerisire 40 px (regulă practică)", "kind": "caution", "rect": [0, 0, 40, 1440]}, {"name": "aerisire 40 px (regulă practică)", "kind": "caution", "rect": [1040, 0, 1080, 1440]}], "safe": [40, 0, 1040, 1440], "panel": {"rect": [89, 502, 991, 938], "texts": [["IG POST / CARUSEL 3:4", 540.0, 599.1, 55.5, "t"], ["1080 x 1440", 540.0, 746.2, 111.0, "b"], ["min 320 px · max 30 MB", 540.0, 831.0, 40.0, "s"], ["carusel: 2-20 slide-uri, același raport", 540.0, 890.9, 40.0, "s"]]}}, {"key": "fb_feed_4x5", "title": "Facebook feed / reclamă 4:5", "short": "4:5", "w": 1080, "h": 1350, "zones": [{"name": "aerisire 40 px", "kind": "caution", "rect": [0, 0, 1080, 40]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 1310, 1080, 1350]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 40, 40, 1310]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [1040, 40, 1080, 1310]}, {"name": "avatare prieteni (apar uneori) ~460x225", "kind": "caution", "rect": [0, 1125, 460, 1350]}], "safe": [40, 40, 1040, 1310], "panel": {"rect": [81, 441, 999, 909], "texts": [["FACEBOOK 4:5", 540.0, 545.1, 59.5, "t"], ["1080 x 1350", 540.0, 702.8, 119.0, "b"], ["min 600x600 · max 30 MB", 540.0, 793.7, 42.8, "s"], ["colț stânga-jos: avatare", 540.0, 858.0, 42.8, "s"]]}}, {"key": "fb_feed_1x1", "title": "Facebook feed / reclamă / carusel 1:1", "short": "1:1", "w": 1080, "h": 1080, "zones": [{"name": "aerisire 40 px", "kind": "caution", "rect": [0, 0, 1080, 40]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 1040, 1080, 1080]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 40, 40, 1040]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [1040, 40, 1080, 1040]}, {"name": "avatare prieteni (apar uneori) ~460x225", "kind": "caution", "rect": [0, 855, 460, 1080]}], "safe": [40, 40, 1040, 1040], "panel": {"rect": [86, 314, 994, 766], "texts": [["FACEBOOK 1:1 / CARUSEL", 540.0, 414.6, 57.5, "t"], ["1080 x 1080", 540.0, 567.0, 115.0, "b"], ["min 600x600 · max 30 MB", 540.0, 654.9, 41.4, "s"], ["colț stânga-jos: avatare", 540.0, 717.0, 41.4, "s"]]}}, {"key": "fb_link_1x91", "title": "Facebook link / landscape 1.91:1", "short": "1.91:1", "w": 1200, "h": 628, "zones": [{"name": "aerisire 40 px", "kind": "caution", "rect": [0, 0, 1200, 40]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 588, 1200, 628]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 40, 40, 588]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [1160, 40, 1200, 588]}, {"name": "avatare prieteni (estimat din 1:1)", "kind": "caution", "rect": [0, 378, 511, 628]}], "safe": [40, 40, 1160, 588], "panel": {"rect": [303, 151, 897, 477], "texts": [["FACEBOOK LINK 1.91:1", 600.0, 223.6, 41.5, "t"], ["1200 x 628", 600.0, 333.6, 83.0, "b"], ["min 600x314 · max 30 MB", 600.0, 397.0, 29.9, "s"], ["avatare: estimat, neverificat", 600.0, 441.8, 29.9, "s"]]}}, {"key": "tiktok_1x1", "title": "TikTok 1:1", "short": "1:1", "w": 1080, "h": 1080, "zones": [{"name": "aerisire 40 px", "kind": "caution", "rect": [0, 0, 1080, 40]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 1040, 1080, 1080]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 40, 40, 1040]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [1040, 40, 1080, 1040]}], "safe": [40, 40, 1040, 1040], "panel": {"rect": [81, 338, 999, 742], "texts": [["TIKTOK 1:1", 540.0, 442.1, 59.5, "t"], ["1080 x 1080", 540.0, 599.8, 119.0, "b"], ["min 640x640 (oficial TikTok)", 540.0, 690.7, 42.8, "s"]]}}, {"key": "tiktok_16x9", "title": "TikTok 16:9", "short": "16:9", "w": 1920, "h": 1080, "zones": [{"name": "aerisire 40 px", "kind": "caution", "rect": [0, 0, 1920, 40]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 1040, 1920, 1080]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [0, 40, 40, 1040]}, {"name": "aerisire 40 px", "kind": "caution", "rect": [1880, 40, 1920, 1040]}], "safe": [40, 40, 1880, 1040], "panel": {"rect": [282, 242, 1638, 838], "texts": [["TIKTOK 16:9", 960.0, 396.0, 88.0, "t"], ["1920 x 1080", 960.0, 629.2, 176.0, "b"], ["min 1280x720 (oficial TikTok)", 960.0, 763.7, 63.4, "s"]]}}, {"key": "google_ads_1x91", "title": "Google Ads 1.91:1", "short": "1.91:1", "w": 1200, "h": 628, "zones": [{"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 0, 1200, 63]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 565, 1200, 628]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 63, 120, 565]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [1080, 63, 1200, 565]}], "safe": [120, 63, 1080, 565], "panel": {"rect": [334, 165, 866, 463], "texts": [["GOOGLE ADS 1.91:1", 600.0, 231.5, 38.0, "t"], ["1200 x 628", 600.0, 332.2, 76.0, "b"], ["min 600x314 · max 5 MB", 600.0, 390.3, 27.4, "s"], ["RDA · PMax · Demand Gen", 600.0, 431.3, 27.4, "s"]]}}, {"key": "google_ads_1x1", "title": "Google Ads 1:1", "short": "1:1", "w": 1200, "h": 1200, "zones": [{"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 0, 1200, 120]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 1080, 1200, 1200]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 120, 120, 1080]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [1080, 120, 1200, 1080]}], "safe": [120, 120, 1080, 1080], "panel": {"rect": [161, 376, 1039, 824], "texts": [["GOOGLE ADS 1:1", 600.0, 475.8, 57.0, "t"], ["1200 x 1200", 600.0, 626.8, 114.0, "b"], ["min 300x300 · max 5 MB", 600.0, 713.9, 41.0, "s"], ["RDA · PMax · Demand Gen", 600.0, 775.5, 41.0, "s"]]}}, {"key": "google_ads_4x5", "title": "Google Ads 4:5", "short": "4:5", "w": 960, "h": 1200, "zones": [{"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 0, 960, 120]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 1080, 960, 1200]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 120, 96, 1080]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [864, 120, 960, 1080]}], "safe": [96, 120, 864, 1080], "panel": {"rect": [129, 404, 831, 796], "texts": [["GOOGLE ADS 4:5", 480.0, 491.5, 50.0, "t"], ["960 x 1200", 480.0, 624.0, 100.0, "b"], ["min 480x600 · max 5 MB", 480.0, 700.4, 36.0, "s"], ["PMax · Demand Gen (nu RDA)", 480.0, 754.4, 36.0, "s"]]}}, {"key": "google_ads_9x16", "title": "Google Ads 9:16", "short": "9:16", "w": 1080, "h": 1920, "zones": [{"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 0, 1080, 192]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 1728, 1080, 1920]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [0, 192, 108, 1728]}, {"name": "centru 80%: restul poate fi tăiat", "kind": "caution", "rect": [972, 192, 1080, 1728]}], "safe": [108, 192, 972, 1728], "panel": {"rect": [143, 758, 937, 1162], "texts": [["GOOGLE ADS 9:16", 540.0, 848.1, 51.5, "t"], ["1080 x 1920", 540.0, 984.6, 103.0, "b"], ["min 600x1067 · max 5 MB", 540.0, 1063.3, 37.1, "s"], ["Demand Gen · RDA (900x1600)", 540.0, 1118.9, 37.1, "s"]]}}], "groups": [{"name": "Meta", "items": ["meta_story_reels_9x16"]}, {"name": "Instagram", "items": ["ig_post_4x5", "ig_post_1x1", "ig_post_3x4"]}, {"name": "Facebook", "items": ["fb_feed_4x5", "fb_feed_1x1", "fb_link_1x91"]}, {"name": "TikTok", "items": ["tiktok_9x16", "tiktok_1x1", "tiktok_16x9"]}, {"name": "Google Ads", "items": ["google_ads_1x91", "google_ads_1x1", "google_ads_4x5", "google_ads_9x16"]}, {"name": "Universal", "items": ["universal_9x16"]}]};
+
+(function () {
+  const NS = 'http://www.w3.org/2000/svg';
+  const $ = (s, r = document) => r.querySelector(s);
+  const byKey = Object.fromEntries(D.formats.map(f => [f.key, f]));
+  const state = { key: D.formats[0].key, overlay: true, fill: true, panel: true };
+
+  const stage = $('#stage'), frame = $('#frame'), svg = $('#ov'), photo = $('#photo');
+  const mctx = document.createElement('canvas').getContext('2d');
+  const FONT = 'Verdana, "DejaVu Sans", Arial, sans-serif';
+  const textW = (t, size) => { mctx.font = '700 ' + size + 'px ' + FONT; return mctx.measureText(t).width; };
+
+  function el(tag, attrs, parent) {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function label(parent, text, rect, size, S) {
+    const [x0, y0, x1, y1] = rect, w = x1 - x0, h = y1 - y0;
+    const tw = textW(text, size);
+    const st = { 'font-size': size, fill: '#fff', stroke: '#000', 'stroke-width': 3 / S, 'paint-order': 'stroke', 'text-anchor': 'middle', 'dominant-baseline': 'central' };
+    if (w >= h && h >= size + 6 / S && tw <= w - 20 / S) {
+      el('text', Object.assign({ x: x0 + w / 2, y: y0 + h / 2 }, st), parent).textContent = text;
+    } else if (h > w && w >= size + 6 / S && tw <= h - 20 / S) {
+      const cx = x0 + w / 2, cy = y0 + h / 2;
+      el('text', Object.assign({ x: cx, y: cy, transform: 'rotate(-90 ' + cx + ' ' + cy + ')' }, st), parent).textContent = text;
+    }
+  }
+
+  function fit() {
+    const f = byKey[state.key];
+    const sw = Math.max(200, stage.clientWidth - 36);
+    const sh = Math.min(window.innerHeight * 0.8, 820);
+    const S = Math.min(sw / f.w, sh / f.h);
+    frame.style.width = Math.round(f.w * S) + 'px';
+    frame.style.height = Math.round(f.h * S) + 'px';
+    return S;
+  }
+
+  function draw() {
+    const f = byKey[state.key];
+    const S = fit();
+    svg.setAttribute('viewBox', '0 0 ' + f.w + ' ' + f.h);
+    svg.textContent = '';
+    svg.style.display = state.overlay ? 'block' : 'none';
+    if (!state.overlay) return;
+    const col = { hard: '#e61e1e', caution: '#ff9600' };
+    const lsize = 11 / S;
+    f.zones.forEach(z => {
+      const [x0, y0, x1, y1] = z.rect;
+      if (state.fill) el('rect', { x: x0, y: y0, width: x1 - x0, height: y1 - y0, fill: col[z.kind], 'fill-opacity': z.kind === 'hard' ? 0.43 : 0.31 }, svg);
+      el('rect', { x: x0, y: y0, width: x1 - x0, height: y1 - y0, fill: 'none', stroke: col[z.kind], 'stroke-width': 2 / S }, svg);
+    });
+    const [a, b, c, d] = f.safe;
+    el('rect', { x: a, y: b, width: c - a, height: d - b, fill: 'none', stroke: '#1ec85a', 'stroke-width': 3 / S, 'stroke-dasharray': (10 / S) + ' ' + (7 / S) }, svg);
+    f.zones.forEach(z => label(svg, z.name, z.rect, lsize, S));
+    const sl = el('text', { x: a + 10 / S, y: b + 16 / S, 'font-size': 12 / S, fill: '#1ec85a', stroke: '#000', 'stroke-width': 3 / S, 'paint-order': 'stroke' }, svg);
+    sl.textContent = 'ZONA SIGURĂ ' + (c - a) + 'x' + (d - b);
+    if (state.panel && f.panel) {
+      const r = f.panel.rect;
+      el('rect', { x: r[0], y: r[1], width: r[2] - r[0], height: r[3] - r[1], rx: 24, fill: '#000', 'fill-opacity': 0.67 }, svg);
+      const fills = { t: '#ffd600', b: '#ffffff', s: '#e1e1e1' };
+      f.panel.texts.forEach(t => {
+        el('text', { x: t[1], y: t[2], 'font-size': t[3], 'text-anchor': 'middle', fill: fills[t[4]], style: 'font-weight:700' }, svg).textContent = t[0];
+      });
+    }
+  }
+
+  function side() {
+    const f = byKey[state.key];
+    $('#fmtTitle').textContent = f.title;
+    const sx = f.safe[2] - f.safe[0], sy = f.safe[3] - f.safe[1];
+    $('#fmtMeta').textContent = 'Canvas ' + f.w + 'x' + f.h + ' px · zonă sigură ' + sx + 'x' + sy + ' px';
+    const lg = $('#legend'); lg.textContent = '';
+    const seen = new Set();
+    f.zones.forEach(z => {
+      const id = z.kind + z.name; if (seen.has(id)) return; seen.add(id);
+      const li = document.createElement('li');
+      const s = document.createElement('span'); s.className = 'sw ' + z.kind; li.appendChild(s);
+      li.appendChild(document.createTextNode(z.name));
+      lg.appendChild(li);
+    });
+    const li = document.createElement('li');
+    const s = document.createElement('span'); s.className = 'sw safe'; li.appendChild(s);
+    li.appendChild(document.createTextNode('zona sigură'));
+    lg.appendChild(li);
+    const base = 'downloads/overlays/', id = f.key + '_' + f.w + 'x' + f.h;
+    const dl = $('#dl'); dl.textContent = '';
+    [['PNG cu umplere', 'png/' + id + '_zone.png'], ['PNG contur', 'png/' + id + '_contur.png'], ['SVG', 'svg/' + id + '.svg']].forEach(p => {
+      const a = document.createElement('a'); a.className = 'btn sm'; a.href = base + p[1]; a.download = ''; a.textContent = p[0]; dl.appendChild(a);
+    });
+    document.querySelectorAll('#picker .chip').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.fmt === state.key)));
+  }
+
+  function select(key, scroll) {
+    if (!byKey[key]) return;
+    state.key = key;
+    side(); draw();
+    try { history.replaceState(null, '', '#fmt=' + key); } catch (e) {}
+    if (scroll) $('#previzualizare').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // selector de formate
+  const picker = $('#picker');
+  D.groups.forEach(g => {
+    const wrap = document.createElement('div'); wrap.className = 'group';
+    const b = document.createElement('b'); b.textContent = g.name; wrap.appendChild(b);
+    const chips = document.createElement('div'); chips.className = 'chips';
+    g.items.forEach(k => {
+      const f = byKey[k];
+      const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'chip'; btn.dataset.fmt = k;
+      btn.textContent = f.short; btn.setAttribute('aria-pressed', 'false');
+      btn.addEventListener('click', () => select(k, false));
+      chips.appendChild(btn);
+    });
+    wrap.appendChild(chips); picker.appendChild(wrap);
+  });
+
+  document.querySelectorAll('.ovl').forEach(b => b.addEventListener('click', () => select(b.dataset.fmt, true)));
+  $('#tOv').addEventListener('change', e => { state.overlay = e.target.checked; draw(); });
+  $('#tFill').addEventListener('change', e => { state.fill = e.target.checked; draw(); });
+  $('#tPanel').addEventListener('change', e => { state.panel = e.target.checked; draw(); });
+  $('#px').addEventListener('input', e => { frame.style.setProperty('--px', e.target.value + '%'); });
+  $('#upBtn').addEventListener('click', () => $('#upFile').click());
+  $('#upFile').addEventListener('change', e => {
+    const f = e.target.files && e.target.files[0]; if (!f) return;
+    photo.src = URL.createObjectURL(f);
+  });
+  window.addEventListener('resize', () => draw());
+  if ('ResizeObserver' in window) new ResizeObserver(() => draw()).observe(stage);
+
+  // filtre tabel
+  const plats = ['Toate'].concat(Array.from(new Set(Array.from(document.querySelectorAll('#mainTable tbody tr')).map(r => r.dataset.p))));
+  const tf = $('#tfilters');
+  plats.forEach((p, i) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'chip'; b.textContent = p; b.setAttribute('aria-pressed', String(i === 0));
+    b.addEventListener('click', () => {
+      tf.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+      document.querySelectorAll('#mainTable tbody tr').forEach(r => { r.style.display = (p === 'Toate' || r.dataset.p === p) ? '' : 'none'; });
+    });
+    tf.appendChild(b);
+  });
+
+  // temă
+  const root = document.documentElement;
+  try { const t = localStorage.getItem('sz-theme'); if (t) root.dataset.theme = t; } catch (e) {}
+  $('#themeBtn').addEventListener('click', () => {
+    const t = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = t;
+    try { localStorage.setItem('sz-theme', t); } catch (e) {}
+  });
+
+  // apariții discrete la scroll
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(n => io.observe(n));
+  } else {
+    document.querySelectorAll('.reveal').forEach(n => n.classList.add('in'));
+  }
+
+  const m = location.hash.match(/fmt=([a-z0-9_]+)/);
+  select(m && byKey[m[1]] ? m[1] : state.key, false);
+})();
+</script>
+</body>
+</html>
